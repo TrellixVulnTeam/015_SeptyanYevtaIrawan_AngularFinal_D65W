@@ -1,0 +1,32 @@
+<section class="vh-100" style="background-color: #508bfc;">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                    <div class="card-body p-5 text-center">
+                        <h3 class="mb-5"><img
+                                src="https://th.bing.com/th/id/OIP.okPmQuFyZkxdfmt2neairAHaHa?pid=ImgDet&rs=1"
+                                width="30" height="30" class="d-inline-block align-top" alt="">
+                            Login To Payments APP</h3>
+                        <form [formGroup]="form.inputData" (ngSubmit)="login()">
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="typeEmailX-2">Email</label>
+                                <input type="email" formControlName="email" name="email" id="email"
+                                    placeholder="email" class="form-control form-control-lg" />
+
+                            </div>
+
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="typePasswordX-2">Password</label>
+                                <input type="password" formControlName="password" name="password" id="password"
+                                placeholder="password" class="form-control form-control-lg" />
+                            </div>
+                            <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
+                            <span>Do You Have Account? <a [routerLink]="['/register']">Klick Here For Create One!</a> </span>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

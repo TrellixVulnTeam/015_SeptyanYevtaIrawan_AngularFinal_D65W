@@ -1,0 +1,48 @@
+<app-navbar></app-navbar>
+<h3 style="text-align: center;">EDIT FORM</h3>
+<form [formGroup]="form.inputData" (ngSubmit)="updateData(card_id)" >
+    <input type="hidden" formControlName="id" name="id" id="id">
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <label for="inputEmail4">Customer Name</label>
+            <input type="text" class="form-control" formControlName="customername" placeholder="Customer Name"
+                name="customername" id="customername" required>
+            <span style="color: red;" *ngIf="customername && customername.touched && customername.invalid">
+                You Must Input Your Customer Name Min 5</span>
+        </div>
+        <div class="form-group col-md-12">
+            <label for="inputPassword4">Card Name</label>
+            <input type="text" class="form-control" formControlName="cardname" name="cardname" id="cardname"
+                placeholder="Card Name" required>
+            <span style="color: red;" *ngIf="cardname && cardname.touched && cardname.invalid">
+                You Must Input Your Card Name Min 5</span>
+        </div>
+        <div class="form-group col-md-12">
+            <label for="inputPassword4">Card Info</label>
+            <input type="text" class="form-control" formControlName="cardinfo" name="cardinfo" id="cardinfo"
+                placeholder="Card Info" required>
+            <span style="color: red;" *ngIf="cardinfo && cardinfo.touched && cardinfo.invalid">
+                You Must Input Your Card Info 16 Digit Number Only</span>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputPassword4">Security Code</label>
+            <input type="password" class="form-control" formControlName="securitycode" name="securitycode"
+                id="securitycode" placeholder="Security Code" [readonly]="true" required>
+            <span style="color: red;" *ngIf="securitycode && securitycode.touched && securitycode.invalid">
+                You Must Input Your Security Code 4 Digit And Number Only</span>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputPassword4">Exp</label>
+            <input type="date" class="form-control" formControlName="exp" name="exp" id="exp" required [readonly]="true">
+            <span style="color: red;" *ngIf="exp && exp.touched && exp.invalid">
+                You Must Input Date</span>
+        </div>
+        <div class="form-group col-md-6">
+            <a [routerLink]="['/home']" class="btn btn-primary btn-block">Back</a>
+        </div>
+        <div class="form-group col-md-6">
+            <button type="submit" class="btn btn-primary btn-block">Update Data</button>
+        </div>
+    </div>
+
+</form>
