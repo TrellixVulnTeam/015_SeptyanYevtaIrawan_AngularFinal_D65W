@@ -31,7 +31,7 @@
                                 <span style="color: red;" *ngIf="password && password.touched && password.invalid">
                                     You Must Input Your Password min 8 and have 1 symbol , 1 uppercase , 1 lowercase and 1 number</span>
                             </div>
-                            <button class="btn btn-primary btn-lg btn-block" type="submit">Register</button>
+                            <button [disabled] = "form.inputData.invalid" class="btn btn-primary btn-lg btn-block" type="submit">Register</button>
                             <span>Do You Have Account? <a [routerLink]="['/login']">Klick Here For Login!!</a> </span>
                         </form>
                     </div>

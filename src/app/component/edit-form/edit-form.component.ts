@@ -17,7 +17,7 @@ export class EditFormComponent implements OnInit {
   form = {
     inputData: new FormGroup({
       customername: new FormControl('', [Validators.required, Validators.minLength(5)]),
-      cardname: new FormControl('', [Validators.required, Validators.minLength(2)]),
+      cardname: new FormControl('', [Validators.required, Validators.minLength(5)]),
       cardinfo: new FormControl('', [Validators.required, Validators.minLength(16), Validators.maxLength(16),Validators.pattern("^[0-9]*$")]),
       securitycode: new FormControl('', [Validators.required, Validators.minLength(4), Validators.pattern("^[0-9]*$"), Validators.maxLength(4)]),
       exp: new FormControl('', [Validators.required]),

@@ -15,10 +15,16 @@ export class NavbarComponent implements OnInit {
   constructor(public authServices:AuthService,public Router:Router) { }
 
   logout(){
-    localStorage.setItem('access_token' , "")
-    alert("SUKSES LOGOUT REDIRECT KE LOGIN")
-    this.Router.navigate(['login'])
+    if(confirm("Are you sure to Log out ")) {
+      localStorage.setItem('access_token' , "")
+      alert("SUKSES LOGOUT REDIRECT KE LOGIN")
+      this.Router.navigate(['login'])
+      }
+    else{
+      console.log("Cancel");
+    }
   }
+    
   ngOnInit(): void {
     
   }

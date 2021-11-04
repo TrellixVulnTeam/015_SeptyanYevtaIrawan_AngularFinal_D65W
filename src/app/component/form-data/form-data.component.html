@@ -36,7 +36,7 @@
                 You Must Input Date</span>
         </div>
         <div class="form-group col-md-12">
-            <button type="submit" class="btn btn-primary btn-block">Add Data</button>
+            <button [disabled] = "form.inputData.invalid" type="submit" class="btn btn-primary btn-block">Add Data</button>
         </div>
     </div>
 

@@ -12,11 +12,14 @@ import { Cardinfo } from 'src/app/Models/cardinfo';
 export class TableDataComponent implements OnInit {
 
   datas: Cardinfo[]=[]
+  elements: any = [];
+    headElements = ['ID', 'First', 'Last', 'Handle'];
 
   constructor(public dataObject: DataComponentService,public Router:Router) { }
   
   ngOnInit(): void {
     this.setData()
+    
   }
 
   Delete(id:number,name:string) {

@@ -16,7 +16,7 @@ const routes: Routes = [
 
   { path: 'login', component: LoginComponent, canActivate: [NotloggedGuard] },
 
-  { path: 'register', component: RegisterComponent },
+  { path: 'register', component: RegisterComponent,canActivate: [NotloggedGuard] },
   { path: 'edit/:id', component: EditFormComponent,canActivate: [AuthGuard] },
   { path: '**', component: NoPageFoundComponent },
 ];

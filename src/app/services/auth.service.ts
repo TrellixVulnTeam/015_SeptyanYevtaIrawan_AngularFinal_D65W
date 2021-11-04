@@ -17,7 +17,8 @@ export class AuthService {
 
   login(user:User){
     return this.http.post<any>(`${this.endpoint}/login`, user).pipe(catchError(this.handleError)).subscribe((res:any) => {
-        localStorage.setItem('access_token' , res.token)
+        localStorage.setItem('access_token' , res.result.token)
+        console.log(res.result.token)
         alert("SUKSES LOGIN")
         this.router.navigate(['home'])
     })
@@ -29,9 +30,6 @@ export class AuthService {
   }
   getToken(){
     return localStorage.getItem('access_token')
-  }
-  getUser(){
-    return localStorage.getItem('current_user')
   }
 
 

@@ -60,7 +60,7 @@ export class DataComponentService {
     if (error.error instanceof ErrorEvent) {
       msg = error.error.message;
     } else {
-      msg = `Error Code: ${error.status}\n Message: ${error.message}`;
+      msg = `Salah Input!`;
     }
     alert(msg)
     return throwError(msg)

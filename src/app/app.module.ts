@@ -15,6 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DatePipe } from '@angular/common';
 import { NoPageFoundComponent } from './component/no-page-found/no-page-found.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpInterceptorService } from './services/http-interceptor.service';
 
 
 @NgModule({
@@ -36,7 +38,11 @@ import { NoPageFoundComponent } from './component/no-page-found/no-page-found.co
     HttpClientModule,
     NgbModule
   ],
-  providers: [DatePipe],
+  providers: [DatePipe,{
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpInterceptorService,
+      multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
